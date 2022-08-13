@@ -48,4 +48,5 @@ app.*.map.json
 
 # generated file
 *.g.dart
+*.gr.dart
 *.config.dart
