@@ -28,6 +28,15 @@ class SettigPage extends StatelessWidget {
                   AutoRouter.of(context).push(const AboutRoute());
                 },
                 child: const Text("About"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const LoginRoute());
+                },
+                child: const Text("Login"),
               )
             ],
           ),
