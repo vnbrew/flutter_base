@@ -5,6 +5,9 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(Object context) {
-    throw Container();
+    return Scaffold(
+      appBar: AppBar(title: const Text("Login page"),),
+      body: Container(color: Colors.red,),
+    );
   }
 }

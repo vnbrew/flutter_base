@@ -39,6 +39,7 @@ dependencies:
   injectable: 1.5.3
   json_annotation: 4.6.0
   auto_route: 4.2.1
+  flutter_bloc: 8.0.1
 
 dev_dependencies:
   flutter_test:
