@@ -33,7 +33,7 @@ import 'package:flutter_base/ui/setting/setting_page.dart';
           ]
         )
       ]
-    )
+    ),
   ],
 )
 class $AppRouter {}

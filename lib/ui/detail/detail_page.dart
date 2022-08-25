@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/navigation/app_router.gr.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -20,6 +22,9 @@ class DetailPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              TextButton(onPressed: (){
+                AutoRouter.of(context).push(const DownloadRoute());
+              }, child: const Text("Download"))
             ],
           ),
         ),

@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
+import '../../navigation/app_router.gr.dart';
 
 class SettigPage extends StatelessWidget {
   const SettigPage({Key? key}) : super(key: key);
@@ -20,6 +23,12 @@ class SettigPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const AboutRoute());
+                },
+                child: const Text("About"),
+              )
             ],
           ),
         ),

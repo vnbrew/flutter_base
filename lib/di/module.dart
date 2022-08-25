@@ -4,6 +4,6 @@ import 'package:injectable/injectable.dart';
 @module
 abstract class AppModule {
 
-  @singleton
+  @lazySingleton
   AppRouter get router => AppRouter();
 }
