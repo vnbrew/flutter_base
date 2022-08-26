@@ -121,6 +121,7 @@ app.*.map.json
 *.gr.dart
 *.config.dart
 *.gen.dart
+*.freezed.dart
 lib/app/utils/gen/localized
 
 # Coverage

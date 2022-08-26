@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                AppLocalized.current.loginTitle,
+                AppLocalized.current.login,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(

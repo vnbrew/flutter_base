@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../app/utils/gen/localized/l10n.dart';
 import '../../navigation/app_router.gr.dart';
 
 class SettigPage extends StatelessWidget {
@@ -17,7 +18,7 @@ class SettigPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Setting",
+                AppLocalized.current.setting,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(
@@ -27,7 +28,7 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const AboutRoute());
                 },
-                child: const Text("About"),
+                child: Text(AppLocalized.current.about),
               ),
               const SizedBox(
                 height: 10,
@@ -36,7 +37,25 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const LoginRoute());
                 },
-                child: const Text("Login"),
+                child: Text(AppLocalized.current.login),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const LanguageRoute());
+                },
+                child: Text(AppLocalized.current.languege),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const ThemeRoute());
+                },
+                child: Text(AppLocalized.current.theme),
               )
             ],
           ),
