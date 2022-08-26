@@ -1,5 +1,5 @@
+import '../base/base_event.dart';
 import '../enum/enum.dart';
-import 'base_event.dart';
 
 abstract class AppEvent extends BaseEvent {
   const AppEvent();
