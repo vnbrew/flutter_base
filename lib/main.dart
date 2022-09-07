@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/app/utils/gen/localized/l10n.dart';
 import 'package:flutter_base/di/di.dart';
 
 import 'navigation/app_router.gr.dart';
@@ -9,11 +10,10 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   MyApp({Key? key}) : super(key: key);
 
   final _appRouter = getIt<AppRouter>();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       title: 'Bottom Nav Bar with Nested Routing',
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
+      supportedLocales: AppLocalized.delegate.supportedLocales,
+      locale: const Locale('en', 'EN'),
     );
   }
 }
