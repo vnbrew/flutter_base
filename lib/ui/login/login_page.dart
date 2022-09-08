@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/app/utils/gen/localized/l10n.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +15,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Login",
+                AppLocalized.current.loginTitle,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(

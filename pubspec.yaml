@@ -40,6 +40,7 @@ dependencies:
   json_annotation: 4.6.0
   auto_route: 4.2.1
   flutter_bloc: 8.0.1
+  intl: 0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -98,3 +99,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
+  arb_dir: assets/localizations
+  output_dir: lib/app/utils/gen/localized
+  class_name: AppLocalized
