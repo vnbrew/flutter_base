@@ -17,8 +17,11 @@ import '../ui/theme/theme_page.dart';
         path: 'login',
         page: LoginPage,
         transitionsBuilder: TransitionsBuilders.slideBottom),
-    AutoRoute(path: '/', page: MainPage, children: [
-      AutoRoute(
+    CustomRoute(
+      path: '/', 
+      page: MainPage, 
+      children: [
+        AutoRoute(
           path: "home",
           name: "HomeRouter",
           page: EmptyRouterPage,
@@ -26,8 +29,9 @@ import '../ui/theme/theme_page.dart';
             AutoRoute(path: "", page: HomePage),
             AutoRoute(path: "detail", page: DetailPage),
             AutoRoute(path: "download", page: DownloadPage),
-          ]),
-      AutoRoute(
+          ]
+        ),
+        AutoRoute(
           path: "setting",
           name: "SettingRouter",
           page: EmptyRouterPage,
@@ -36,8 +40,38 @@ import '../ui/theme/theme_page.dart';
             AutoRoute(path: "about", page: AboutPage),
             AutoRoute(path: "language", page: LanguagePage),
             AutoRoute(path: "theme", page: ThemePage),
-          ])
-    ]),
+          ]
+        )
+    ], 
+    transitionsBuilder: TransitionsBuilders.slideLeft
+    ),
   ],
 )
 class $AppRouter {}
+
+const mainScreenRouter = CustomRoute<dynamic>(
+  transitionsBuilder: TransitionsBuilders.fadeIn,
+  durationInMilliseconds: 200,
+  page: MainPage,
+  children: [
+    AutoRoute(
+        path: "home",
+        name: "HomeRouter",
+        page: EmptyRouterPage,
+        children: [
+          AutoRoute(path: "", page: HomePage),
+          AutoRoute(path: "detail", page: DetailPage),
+          AutoRoute(path: "download", page: DownloadPage),
+        ],),
+    AutoRoute(
+        path: "setting",
+        name: "SettingRouter",
+        page: EmptyRouterPage,
+        children: [
+          AutoRoute(path: "", page: SettigPage),
+          AutoRoute(path: "about", page: AboutPage),
+          AutoRoute(path: "language", page: LanguagePage),
+          AutoRoute(path: "theme", page: ThemePage),
+        ],),
+  ]
+);

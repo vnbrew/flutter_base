@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
 
-import '../../app/utils/gen/localized/l10n.dart';
 import '../../navigation/app_router.gr.dart';
 
 class SettigPage extends StatelessWidget {
@@ -10,7 +10,7 @@ class SettigPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -18,7 +18,7 @@ class SettigPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                AppLocalized.current.setting,
+                context.loc.setting,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(
@@ -28,7 +28,7 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const AboutRoute());
                 },
-                child: Text(AppLocalized.current.about),
+                child: Text(context.loc.about),
               ),
               const SizedBox(
                 height: 10,
@@ -37,7 +37,7 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const LoginRoute());
                 },
-                child: Text(AppLocalized.current.login),
+                child: Text(context.loc.login),
               ),
               const SizedBox(
                 height: 10,
@@ -46,7 +46,7 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const LanguageRoute());
                 },
-                child: Text(AppLocalized.current.languege),
+                child: Text(context.loc.languege),
               ),
               const SizedBox(
                 height: 10,
@@ -55,7 +55,7 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const ThemeRoute());
                 },
-                child: Text(AppLocalized.current.theme),
+                child: Text(context.loc.theme),
               )
             ],
           ),

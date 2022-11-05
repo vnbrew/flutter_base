@@ -6,6 +6,7 @@ import 'package:flutter_base/app/app_state.dart';
 import 'package:flutter_base/app/utils/gen/localized/l10n.dart';
 import 'package:flutter_base/di/di.dart';
 import 'package:flutter_base/enum/enum.dart';
+import 'package:flutter_base/theme/app_themes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -55,6 +56,9 @@ class _AppViewState extends State<AppView> {
             GlobalCupertinoLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
           ],
+          themeMode: state.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
+          theme: lightMode,
+          darkTheme: darkMode,
         );
       }),
     );

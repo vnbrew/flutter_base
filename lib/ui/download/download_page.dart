@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../app/utils/gen/localized/l10n.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
 
 class DownloadPage extends StatelessWidget {
   const DownloadPage({Key? key}) : super(key: key);
@@ -8,7 +7,7 @@ class DownloadPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -16,7 +15,7 @@ class DownloadPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                AppLocalized.current.download,
+                context.loc.download,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(

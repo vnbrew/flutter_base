@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/enum/constants.dart';
 import 'package:flutter_base/enum/enum.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
+
 import '../../app/app_bloc.dart';
 import '../../app/app_event.dart';
-import '../../app/utils/gen/localized/l10n.dart';
 import '../../di/di.dart';
 import '../../preferences/shared_preferences.dart';
 
@@ -16,7 +17,7 @@ class LanguagePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final currentLanguageCode = prefs.getLanguageCode();
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -24,16 +25,16 @@ class LanguagePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                AppLocalized.current.languege,
+                context.loc.languege,
                 style: Theme.of(context).textTheme.headline3,
               ),
               ElevatedButton(
                 onPressed: () {
-                  var languageCode = (currentLanguageCode == LanguageCode.en)
-                      ? LanguageCode.vi
-                      : LanguageCode.en;
-                  appBloc.add(AppLanguageChanged(languageCode: languageCode));
-                  prefs.setLanguageCode(languageCode);
+                  if(currentLanguageCode != LanguageCode.en) {
+                    var languageCode = LanguageCode.en;
+                    appBloc.add(AppLanguageChanged(languageCode: languageCode));
+                    prefs.setLanguageCode(languageCode);
+                  }
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -48,11 +49,11 @@ class LanguagePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  var languageCode = (currentLanguageCode == LanguageCode.vi)
-                      ? LanguageCode.en
-                      : LanguageCode.vi;
-                  appBloc.add(AppLanguageChanged(languageCode: languageCode));
-                  prefs.setLanguageCode(languageCode);
+                  if(currentLanguageCode != LanguageCode.vi) {
+                    var languageCode = LanguageCode.vi;
+                    appBloc.add(AppLanguageChanged(languageCode: languageCode));
+                    prefs.setLanguageCode(languageCode);
+                  }
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

@@ -1,12 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base/app/utils/gen/localized/l10n.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
 
 import '../navigation/app_router.gr.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(context) {
     return AutoTabsScaffold(
@@ -18,18 +23,21 @@ class MainPage extends StatelessWidget {
         return BottomNavigationBar(
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
-          items: const [
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Home',
+              icon: const Icon(Icons.book),
+              label: context.loc.home,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_box),
-              label: 'Setting',
+              icon: const Icon(Icons.account_box),
+              label: context.loc.setting,
             ),
           ],
         );
-      },
+      }
     );
   }
 }

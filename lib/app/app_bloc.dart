@@ -1,8 +1,8 @@
 import 'package:flutter_base/base/base_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+
 import '../di/di.dart';
-import '../enum/enum.dart';
 import '../preferences/shared_preferences.dart';
 import 'app_event.dart';
 import 'app_state.dart';
@@ -19,10 +19,10 @@ class AppBloc extends BaseBloc<AppEvent, AppState> {
     AppInitiated event,
     Emitter<AppState> emit,
   ) async {
-    final _prefs = getIt<ISharedPreferencesManager>();
+    final prefs = getIt<ISharedPreferencesManager>();
     emit(state.copyWith(
-      isDarkTheme: false,
-      languageCode: _prefs.getLanguageCode(),
+      isDarkTheme: prefs.isDarkMode(),
+      languageCode: prefs.getLanguageCode(),
     ));
   }
 
