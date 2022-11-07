@@ -1,35 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/app/utils/gen/localized/l10n.dart';
+import 'package:flutter_base/app.dart';
+import 'package:flutter_base/app/app.dart';
+import 'package:flutter_base/app/app_bloc.dart';
 import 'package:flutter_base/di/di.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'navigation/app_router.gr.dart';
+import 'base/app_bloc_observer.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
-  runApp(MyApp());
+  Bloc.observer = AppBlocObserver();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  final _appRouter = getIt<AppRouter>();
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Bottom Nav Bar with Nested Routing',
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
-      supportedLocales: AppLocalized.delegate.supportedLocales,
-      locale: const Locale('en', 'EN'),
-      localizationsDelegates: const [
-        AppLocalized.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
+    return BlocProvider(
+      create: (context) => getIt<AppBloc>(),
+      child: const AppView(),
     );
   }
 }

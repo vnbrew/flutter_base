@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  intl_utils: 2.7.0
   intl: 0.17.0
   cupertino_icons: ^1.0.2
   get_it: 7.2.0
@@ -18,6 +19,8 @@ dependencies:
   json_annotation: 4.6.0
   auto_route: 4.2.1
   flutter_bloc: 8.0.1
+  freezed_annotation: 2.1.0
+  shared_preferences: 2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +30,7 @@ dev_dependencies:
   injectable_generator: 1.5.4
   json_serializable: 6.3.1
   auto_route_generator: 4.2.1
+  freezed: 2.1.0
 
 flutter:
   uses-material-design: true

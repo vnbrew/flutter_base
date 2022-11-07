@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
 import 'package:flutter_base/navigation/app_router.gr.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Home",
+                context.loc.home,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(
@@ -26,7 +27,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const DetailRoute());
                 },
-                child: const Text("Detail"),
+                child: Text(context.loc.detail),
               ),
               const SizedBox(
                 height: 10,
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const DownloadRoute());
                 },
-                child: const Text("Download"),
+                child: Text(context.loc.download),
               )
             ],
           ),

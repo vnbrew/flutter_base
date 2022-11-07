@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -14,7 +15,7 @@ class AboutPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "About",
+                context.loc.about,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(

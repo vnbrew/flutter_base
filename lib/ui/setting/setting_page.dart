@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/extension/app_localizations_context.dart';
 
 import '../../navigation/app_router.gr.dart';
 
@@ -9,7 +10,7 @@ class SettigPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -17,7 +18,7 @@ class SettigPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Setting",
+                context.loc.setting,
                 style: Theme.of(context).textTheme.headline3,
               ),
               const SizedBox(
@@ -27,7 +28,7 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const AboutRoute());
                 },
-                child: const Text("About"),
+                child: Text(context.loc.about),
               ),
               const SizedBox(
                 height: 10,
@@ -36,7 +37,25 @@ class SettigPage extends StatelessWidget {
                 onPressed: () {
                   AutoRouter.of(context).push(const LoginRoute());
                 },
-                child: const Text("Login"),
+                child: Text(context.loc.login),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const LanguageRoute());
+                },
+                child: Text(context.loc.languege),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const ThemeRoute());
+                },
+                child: Text(context.loc.theme),
               )
             ],
           ),

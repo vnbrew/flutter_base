@@ -1,5 +1,4 @@
 enum LanguageCode {
   en,
-  ja,
-  zh,
+  vi,
 }
