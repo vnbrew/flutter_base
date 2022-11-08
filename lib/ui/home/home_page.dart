@@ -16,14 +16,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                context.loc.home,
-                style: Theme.of(context).textTheme.headline3,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const DetailRoute());
                 },
@@ -32,7 +25,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const DownloadRoute());
                 },

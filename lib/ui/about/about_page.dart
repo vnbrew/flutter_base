@@ -8,6 +8,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
+      appBar: AppBar(title: Text(context.loc.about)),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

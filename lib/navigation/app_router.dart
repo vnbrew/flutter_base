@@ -17,61 +17,34 @@ import '../ui/theme/theme_page.dart';
         path: 'login',
         page: LoginPage,
         transitionsBuilder: TransitionsBuilders.slideBottom),
-    CustomRoute(
-      path: '/', 
-      page: MainPage, 
-      children: [
-        AutoRoute(
-          path: "home",
-          name: "HomeRouter",
-          page: EmptyRouterPage,
-          children: [
-            AutoRoute(path: "", page: HomePage),
-            AutoRoute(path: "detail", page: DetailPage),
-            AutoRoute(path: "download", page: DownloadPage),
-          ]
-        ),
-        AutoRoute(
-          path: "setting",
-          name: "SettingRouter",
-          page: EmptyRouterPage,
-          children: [
-            AutoRoute(path: "", page: SettigPage),
-            AutoRoute(path: "about", page: AboutPage),
-            AutoRoute(path: "language", page: LanguagePage),
-            AutoRoute(path: "theme", page: ThemePage),
-          ]
-        )
-    ], 
-    transitionsBuilder: TransitionsBuilders.slideLeft
-    ),
+    mainScreenRouter,
   ],
 )
 class $AppRouter {}
 
 const mainScreenRouter = CustomRoute<dynamic>(
-  transitionsBuilder: TransitionsBuilders.fadeIn,
-  durationInMilliseconds: 200,
+  path: '/',
   page: MainPage,
+  transitionsBuilder: TransitionsBuilders.noTransition,
   children: [
-    AutoRoute(
+    CustomRoute(
         path: "home",
         name: "HomeRouter",
         page: EmptyRouterPage,
         children: [
-          AutoRoute(path: "", page: HomePage),
-          AutoRoute(path: "detail", page: DetailPage),
-          AutoRoute(path: "download", page: DownloadPage),
+          CustomRoute(path: "", page: HomePage),
+          CustomRoute(path: "detail", page: DetailPage),
+          CustomRoute(path: "download", page: DownloadPage),
         ],),
-    AutoRoute(
+    CustomRoute(
         path: "setting",
         name: "SettingRouter",
         page: EmptyRouterPage,
         children: [
-          AutoRoute(path: "", page: SettigPage),
-          AutoRoute(path: "about", page: AboutPage),
-          AutoRoute(path: "language", page: LanguagePage),
-          AutoRoute(path: "theme", page: ThemePage),
+          CustomRoute(path: "", page: SettigPage),
+          CustomRoute(path: "about", page: AboutPage),
+          CustomRoute(path: "language", page: LanguagePage),
+          CustomRoute(path: "theme", page: ThemePage),
         ],),
   ]
 );

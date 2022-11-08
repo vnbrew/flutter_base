@@ -16,16 +16,13 @@ class ThemePage extends StatelessWidget {
     final isDarkMode = prefs.isDarkMode();
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
+      appBar: AppBar(title: Text(context.loc.theme)),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                context.loc.theme,
-                style: Theme.of(context).textTheme.headline3,
-              ),
               ElevatedButton(
                 onPressed: () {
                   if(isDarkMode) {

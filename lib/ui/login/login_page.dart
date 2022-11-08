@@ -8,6 +8,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
+      appBar: AppBar(title: Text(context.loc.login),),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

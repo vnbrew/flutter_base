@@ -17,14 +17,7 @@ class SettigPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                context.loc.setting,
-                style: Theme.of(context).textTheme.headline3,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const AboutRoute());
                 },
@@ -33,7 +26,7 @@ class SettigPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const LoginRoute());
                 },
@@ -42,7 +35,7 @@ class SettigPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const LanguageRoute());
                 },
@@ -51,7 +44,7 @@ class SettigPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const ThemeRoute());
                 },

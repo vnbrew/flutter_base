@@ -18,16 +18,13 @@ class LanguagePage extends StatelessWidget {
     final currentLanguageCode = prefs.getLanguageCode();
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
+      appBar: AppBar(title: Text(context.loc.languege)),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                context.loc.languege,
-                style: Theme.of(context).textTheme.headline3,
-              ),
               ElevatedButton(
                 onPressed: () {
                   if(currentLanguageCode != LanguageCode.en) {

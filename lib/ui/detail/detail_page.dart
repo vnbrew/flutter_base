@@ -10,20 +10,14 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
+      appBar: AppBar(title: Text(context.loc.detail)),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                context.loc.detail,
-                style: Theme.of(context).textTheme.headline3,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   AutoRouter.of(context).push(const DownloadRoute());
                 },
