@@ -1,12 +1,18 @@
 {
     "login": "Login",
+    "logout": "Logout",
     "home": "Home",
-    "setting":"Setting",
-    "about":"About",
-    "languege":"Language",
-    "theme":"Theme",
+    "setting": "Setting",
+    "about": "About",
+    "languege": "Language",
+    "theme": "Theme",
     "detail": "Detail",
     "download": "Download",
     "dark_mode": "Dark mode",
-    "light_mode": "Light mode"
+    "light_mode": "Light mode",
+    "user_name": "Username",
+    "password": "Password",
+    "sign_in": "Sign in",
+    "sign_up": "Sign Up",
+    "forgot_password": "Forgot Password"
 }

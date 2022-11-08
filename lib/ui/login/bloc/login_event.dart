@@ -1,19 +1,14 @@
-import 'package:flutter_base/base/base_bloc_event.dart';
+import 'package:equatable/equatable.dart';
 
-abstract class LoginEvent extends BaseBlocEvent {
+abstract class LoginEvent extends Equatable {
   const LoginEvent();
 }
 
-class EmailTextFieldChanged extends LoginEvent {
-  String email;
-  EmailTextFieldChanged({required this.email});
-}
-
-class PasswordTextFieldChanged extends LoginEvent {
-  String password;
-  PasswordTextFieldChanged({required this.password});
-}
-
 class ButtonLoginPressed extends LoginEvent {
-  const ButtonLoginPressed();
+  final String username;
+  final String password;
+  const ButtonLoginPressed({required this.password, required this.username});
+
+  @override
+  List<Object?> get props => [password, username];
 }

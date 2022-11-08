@@ -1,12 +1,18 @@
 {
     "login": "Đăng nhập",
+    "logout": "Đăng xuất",
     "home": "Trang chủ",
-    "setting":"Cài đặt",
-    "about":"Giới thiệu",
-    "languege":"Ngôn ngữ",
-    "theme":"Theme",
+    "setting": "Cài đặt",
+    "about": "Giới thiệu",
+    "languege": "Ngôn ngữ",
+    "theme": "Chủ đề",
     "detail": "Chi tiết",
     "download": "Tải",
     "dark_mode": "Chế độ tối",
-    "light_mode": "Chế độ sáng"
+    "light_mode": "Chế độ sáng",
+    "user_name": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "sign_in": "Đăng nhập",
+    "sign_up": "Đăng ký",
+    "forgot_password": "Quên mật khẩu"
 }

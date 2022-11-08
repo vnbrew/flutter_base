@@ -9,12 +9,17 @@ abstract class ISharedPreferencesManager {
 
   void setThemeMode(bool isDark);
   bool isDarkMode();
+
+  void setUserLoggedIn();
+  void setUserLoggedOut();
+  bool isUserLoggedIn();
 }
 
 @LazySingleton(as: ISharedPreferencesManager)
 class SharedPreferencesManager implements ISharedPreferencesManager {
   final String _themePrefs = "theme";
   final String _languagePrefs = "language";
+  final String _loginPrefs = "login";
   late SharedPreferences _preferences;
   late ILanguageMapper _languageMapper;
 
@@ -39,14 +44,29 @@ class SharedPreferencesManager implements ISharedPreferencesManager {
     final languageName = _preferences.getString(_languagePrefs) ?? '';
     return _languageMapper.mapToLanguageCode(languageName);
   }
-  
+
   @override
   bool isDarkMode() {
     return _preferences.getBool(_themePrefs) ?? false;
   }
-  
+
   @override
   void setThemeMode(bool isDark) {
     _preferences.setBool(_themePrefs, isDark);
+  }
+
+  @override
+  bool isUserLoggedIn() {
+    return _preferences.getBool(_loginPrefs) ?? false;
+  }
+
+  @override
+  void setUserLoggedIn() {
+    _preferences.setBool(_loginPrefs, true);
+  }
+
+  @override
+  void setUserLoggedOut() {
+    _preferences.setBool(_loginPrefs, false);
   }
 }
