@@ -2,9 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/di/di.dart';
 import 'package:flutter_base/extension/app_localizations_context.dart';
+import 'package:flutter_base/repository/repository.dart';
 
 import '../../navigation/app_router.gr.dart';
-import '../../preferences/shared_preferences.dart';
+import '../../repository/preferences/shared_preferences.dart';
 
 class SettigPage extends StatefulWidget {
   const SettigPage({Key? key}) : super(key: key);
@@ -16,7 +17,6 @@ class SettigPage extends StatefulWidget {
 class _SettigPageState extends State<SettigPage> {
   @override
   Widget build(BuildContext context) {
-    final prefs = getIt<ISharedPreferencesManager>();
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
@@ -34,7 +34,7 @@ class _SettigPageState extends State<SettigPage> {
               const SizedBox(
                 height: 10,
               ),
-              LoginButtonWidget(prefs: prefs),
+              LoginButtonWidget(),
               const SizedBox(
                 height: 10,
               ),
@@ -62,12 +62,9 @@ class _SettigPageState extends State<SettigPage> {
 }
 
 class LoginButtonWidget extends StatefulWidget {
-  const LoginButtonWidget({
-    Key? key,
-    required this.prefs,
-  }) : super(key: key);
+  late IRepository repository = getIt<IRepository>();
 
-  final ISharedPreferencesManager prefs;
+  LoginButtonWidget({Key? key}) : super(key: key);
 
   @override
   State<LoginButtonWidget> createState() => _LoginButtonWidgetState();
@@ -78,8 +75,8 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        if (widget.prefs.isUserLoggedIn()) {
-          widget.prefs.setUserLoggedOut();
+        if (widget.repository.isUserLoggedIn()) {
+          widget.repository.logout();
           setState(() {});
         } else {
           AutoRouter.of(context).push(const LoginRoute()).then((value) => {
@@ -87,7 +84,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
               });
         }
       },
-      child: Text(widget.prefs.isUserLoggedIn()
+      child: Text(widget.repository.isUserLoggedIn()
           ? context.loc.logout
           : context.loc.login),
     );

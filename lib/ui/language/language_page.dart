@@ -6,7 +6,7 @@ import 'package:flutter_base/extension/app_localizations_context.dart';
 import '../../app/app_bloc.dart';
 import '../../app/app_event.dart';
 import '../../di/di.dart';
-import '../../preferences/shared_preferences.dart';
+import '../../repository/preferences/shared_preferences.dart';
 
 class LanguagePage extends StatelessWidget {
   const LanguagePage({Key? key}) : super(key: key);

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../di/di.dart';
-import '../preferences/shared_preferences.dart';
+import '../repository/preferences/shared_preferences.dart';
 import 'app_event.dart';
 import 'app_state.dart';
 

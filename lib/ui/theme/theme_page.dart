@@ -4,7 +4,7 @@ import 'package:flutter_base/extension/app_localizations_context.dart';
 import '../../app/app_bloc.dart';
 import '../../app/app_event.dart';
 import '../../di/di.dart';
-import '../../preferences/shared_preferences.dart';
+import '../../repository/preferences/shared_preferences.dart';
 
 class ThemePage extends StatelessWidget {
   const ThemePage({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class ThemePage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  if(isDarkMode) {
+                  if (isDarkMode) {
                     appBloc.add(AppThemeChanged(isDarkTheme: !isDarkMode));
                     prefs.setThemeMode(!isDarkMode);
                   }
@@ -43,7 +43,7 @@ class ThemePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  if(!isDarkMode) {
+                  if (!isDarkMode) {
                     appBloc.add(AppThemeChanged(isDarkTheme: !isDarkMode));
                     prefs.setThemeMode(!isDarkMode);
                   }
