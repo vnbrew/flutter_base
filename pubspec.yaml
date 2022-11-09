@@ -22,6 +22,7 @@ dependencies:
   freezed_annotation: 2.1.0
   shared_preferences: 2.0.15
   equatable: 2.0.5
+  flutter_markdown: 0.6.13
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +36,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/about/
   
 flutter_intl:
   enabled: true
