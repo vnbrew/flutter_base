@@ -13,16 +13,17 @@ dependencies:
     sdk: flutter
   intl_utils: 2.7.0
   intl: 0.17.0
-  cupertino_icons: ^1.0.2
+  cupertino_icons: 1.0.2
   get_it: 7.2.0
   injectable: 1.5.3
   json_annotation: 4.6.0
   auto_route: 4.2.1
-  flutter_bloc: 8.0.1
+  flutter_bloc: 8.1.1
   freezed_annotation: 2.1.0
   shared_preferences: 2.0.15
   equatable: 2.0.5
   flutter_markdown: 0.6.13
+  flutter_native_splash: 2.2.17
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +39,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/about/
+    - assets/splash/
   
 flutter_intl:
   enabled: true

@@ -4,6 +4,12 @@
 # IDE
 - Visual Studio Code
 # Build
-- dart pub global run intl_utils:generate
-- flutter pub run build_runner build --delete-conflicting-outputs
-- flutter run
+```sh
+flutter pub global run intl_utils:generate
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+# Splash
+```sh
+flutter pub run flutter_native_splash:create
+flutter pub run flutter_native_splash:create --path=flutter_native_splash.yaml
+```
