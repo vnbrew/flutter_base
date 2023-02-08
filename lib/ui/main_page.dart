@@ -13,9 +13,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(context) {
     return AutoTabsScaffold(
+        scaffoldKey: _scaffoldkey,
+        builder: (context, child, animation) {
+          return ScaleTransition(scale: animation, child: child);
+        },
         routes: const [
           HomeRouter(),
           SettingRouter(),

@@ -22,16 +22,27 @@ class $AppRouter {}
 const mainScreenRouter = CustomRoute<dynamic>(
   path: '/',
   page: MainPage,
-  transitionsBuilder: TransitionsBuilders.noTransition,
   children: [
     CustomRoute(
       path: "home",
       name: "HomeRouter",
       page: EmptyRouterPage,
       children: [
-        CustomRoute(path: "", page: HomePage),
-        CustomRoute(path: "detail", page: DetailPage),
-        CustomRoute(path: "download", page: DownloadPage),
+        CustomRoute(
+          path: "",
+          page: HomePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "detail",
+          page: DetailPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "download",
+          page: DownloadPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
     CustomRoute(
@@ -39,10 +50,26 @@ const mainScreenRouter = CustomRoute<dynamic>(
       name: "SettingRouter",
       page: EmptyRouterPage,
       children: [
-        CustomRoute(path: "", page: SettigPage),
-        CustomRoute(path: "about", page: AboutPage),
-        CustomRoute(path: "language", page: LanguagePage),
-        CustomRoute(path: "theme", page: ThemePage),
+        CustomRoute(
+          path: "",
+          page: SettigPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "about",
+          page: AboutPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "language",
+          page: LanguagePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "theme",
+          page: ThemePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
     CustomRoute(
@@ -50,10 +77,26 @@ const mainScreenRouter = CustomRoute<dynamic>(
       name: "LandRouter",
       page: EmptyRouterPage,
       children: [
-        CustomRoute(path: "", page: SettigPage),
-        CustomRoute(path: "about", page: AboutPage),
-        CustomRoute(path: "language", page: LanguagePage),
-        CustomRoute(path: "theme", page: ThemePage),
+        CustomRoute(
+          path: "",
+          page: SettigPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "about",
+          page: AboutPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "language",
+          page: LanguagePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "theme",
+          page: ThemePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
     CustomRoute(
@@ -61,10 +104,26 @@ const mainScreenRouter = CustomRoute<dynamic>(
       name: "MediationRouter",
       page: EmptyRouterPage,
       children: [
-        CustomRoute(path: "", page: SettigPage),
-        CustomRoute(path: "about", page: AboutPage),
-        CustomRoute(path: "language", page: LanguagePage),
-        CustomRoute(path: "theme", page: ThemePage),
+        CustomRoute(
+          path: "",
+          page: SettigPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "about",
+          page: AboutPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "language",
+          page: LanguagePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "theme",
+          page: ThemePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
     CustomRoute(
@@ -72,10 +131,26 @@ const mainScreenRouter = CustomRoute<dynamic>(
       name: "ProfileRouter",
       page: EmptyRouterPage,
       children: [
-        CustomRoute(path: "", page: SettigPage),
-        CustomRoute(path: "about", page: AboutPage),
-        CustomRoute(path: "language", page: LanguagePage),
-        CustomRoute(path: "theme", page: ThemePage),
+        CustomRoute(
+          path: "",
+          page: SettigPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "about",
+          page: AboutPage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "language",
+          page: LanguagePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        CustomRoute(
+          path: "theme",
+          page: ThemePage,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
   ],
