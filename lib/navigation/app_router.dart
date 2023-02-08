@@ -13,10 +13,7 @@ import '../ui/theme/theme_page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    CustomRoute(
-        path: 'login',
-        page: LoginPage,
-        transitionsBuilder: TransitionsBuilders.slideBottom),
+    CustomRoute(path: 'login', page: LoginPage, transitionsBuilder: TransitionsBuilders.slideBottom),
     mainScreenRouter,
   ],
 )
@@ -28,23 +25,58 @@ const mainScreenRouter = CustomRoute<dynamic>(
   transitionsBuilder: TransitionsBuilders.noTransition,
   children: [
     CustomRoute(
-        path: "home",
-        name: "HomeRouter",
-        page: EmptyRouterPage,
-        children: [
-          CustomRoute(path: "", page: HomePage),
-          CustomRoute(path: "detail", page: DetailPage),
-          CustomRoute(path: "download", page: DownloadPage),
-        ],),
+      path: "home",
+      name: "HomeRouter",
+      page: EmptyRouterPage,
+      children: [
+        CustomRoute(path: "", page: HomePage),
+        CustomRoute(path: "detail", page: DetailPage),
+        CustomRoute(path: "download", page: DownloadPage),
+      ],
+    ),
     CustomRoute(
-        path: "setting",
-        name: "SettingRouter",
-        page: EmptyRouterPage,
-        children: [
-          CustomRoute(path: "", page: SettigPage),
-          CustomRoute(path: "about", page: AboutPage),
-          CustomRoute(path: "language", page: LanguagePage),
-          CustomRoute(path: "theme", page: ThemePage),
-        ],),
-  ]
+      path: "setting",
+      name: "SettingRouter",
+      page: EmptyRouterPage,
+      children: [
+        CustomRoute(path: "", page: SettigPage),
+        CustomRoute(path: "about", page: AboutPage),
+        CustomRoute(path: "language", page: LanguagePage),
+        CustomRoute(path: "theme", page: ThemePage),
+      ],
+    ),
+    CustomRoute(
+      path: "land",
+      name: "LandRouter",
+      page: EmptyRouterPage,
+      children: [
+        CustomRoute(path: "", page: SettigPage),
+        CustomRoute(path: "about", page: AboutPage),
+        CustomRoute(path: "language", page: LanguagePage),
+        CustomRoute(path: "theme", page: ThemePage),
+      ],
+    ),
+    CustomRoute(
+      path: "mediation",
+      name: "MediationRouter",
+      page: EmptyRouterPage,
+      children: [
+        CustomRoute(path: "", page: SettigPage),
+        CustomRoute(path: "about", page: AboutPage),
+        CustomRoute(path: "language", page: LanguagePage),
+        CustomRoute(path: "theme", page: ThemePage),
+      ],
+    ),
+    CustomRoute(
+      path: "profile",
+      name: "ProfileRouter",
+      page: EmptyRouterPage,
+      children: [
+        CustomRoute(path: "", page: SettigPage),
+        CustomRoute(path: "about", page: AboutPage),
+        CustomRoute(path: "language", page: LanguagePage),
+        CustomRoute(path: "theme", page: ThemePage),
+      ],
+    ),
+  ],
 );
