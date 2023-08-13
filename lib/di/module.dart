@@ -1,4 +1,4 @@
-import 'package:flutter_base/navigation/app_router.gr.dart';
+import 'package:flutter_base/navigation/app_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

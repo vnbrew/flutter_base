@@ -11,30 +11,31 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl_utils: 2.7.0
-  intl: 0.17.0
-  cupertino_icons: 1.0.2
-  get_it: 7.2.0
-  injectable: 1.5.3
-  json_annotation: 4.6.0
-  auto_route: 4.2.1
-  flutter_bloc: 8.1.1
-  freezed_annotation: 2.1.0
-  shared_preferences: 2.0.15
+  intl_utils: 2.8.4
+  intl: 0.18.0
+  cupertino_icons: 1.0.5
+  get_it: 7.6.0
+  injectable: 2.2.0
+  json_annotation: ^4.8.1
+  auto_route: 7.8.0
+  flutter_bloc: ^8.1.3
+  freezed_annotation: ^2.4.1
+  shared_preferences: ^2.2.0
   equatable: 2.0.5
-  flutter_markdown: 0.6.13
-  flutter_native_splash: 2.2.17
-  rive: 0.8.1
+  flutter_markdown: ^0.6.17+1
+  flutter_native_splash: ^2.3.1
+  rive: ^0.11.14
+  google_maps_flutter: ^2.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: 2.0.0
-  build_runner: 2.2.0
-  injectable_generator: 1.5.4
-  json_serializable: 6.3.1
-  auto_route_generator: 4.2.1
-  freezed: 2.1.0
+  flutter_lints: ^2.0.2
+  build_runner: 2.4.6
+  injectable_generator: ^2.3.0
+  json_serializable: ^6.7.1
+  auto_route_generator: ^7.3.1
+  freezed: 2.4.1
 
 flutter:
   uses-material-design: true

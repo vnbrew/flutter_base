@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/app/app_bloc.dart';
@@ -6,12 +7,12 @@ import 'package:flutter_base/app/app_state.dart';
 import 'package:flutter_base/app/utils/gen/localized/l10n.dart';
 import 'package:flutter_base/di/di.dart';
 import 'package:flutter_base/enum/enum.dart';
+import 'package:flutter_base/navigation/app_router.dart';
 import 'package:flutter_base/theme/app_themes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'navigation/app_router.gr.dart';
-
+@RoutePage()
 class AppView extends StatefulWidget {
   const AppView({Key? key}) : super(key: key);
 

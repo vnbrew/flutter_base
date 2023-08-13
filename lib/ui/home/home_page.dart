@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/extension/app_localizations_context.dart';
 import 'package:flutter_base/navigation/app_router.gr.dart';
 
+@RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

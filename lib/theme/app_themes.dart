@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 final lightMode = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   primarySwatch: Colors.blue,
-  backgroundColor: Colors.white,
+  colorScheme: ColorScheme.fromSwatch(
+    primarySwatch: Colors.blue,
+    backgroundColor: Colors.white,
+    brightness: Brightness.light,
+  ),
   brightness: Brightness.light,
   splashColor: Colors.transparent,
 );
@@ -12,7 +16,11 @@ final lightMode = ThemeData(
 final darkMode = ThemeData(
   scaffoldBackgroundColor: Colors.black,
   primarySwatch: Colors.teal,
-  backgroundColor: Colors.black,
+  colorScheme: ColorScheme.fromSwatch(
+    primarySwatch: Colors.teal,
+    backgroundColor: Colors.black,
+    brightness: Brightness.dark,
+  ),
   brightness: Brightness.dark,
   splashColor: Colors.transparent,
 );

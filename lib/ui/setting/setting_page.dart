@@ -5,20 +5,20 @@ import 'package:flutter_base/extension/app_localizations_context.dart';
 import 'package:flutter_base/repository/repository.dart';
 
 import '../../navigation/app_router.gr.dart';
-import '../../repository/preferences/shared_preferences.dart';
 
-class SettigPage extends StatefulWidget {
-  const SettigPage({Key? key}) : super(key: key);
+@RoutePage()
+class SettingPage extends StatefulWidget {
+  const SettingPage({Key? key}) : super(key: key);
 
   @override
-  State<SettigPage> createState() => _SettigPageState();
+  State<SettingPage> createState() => _SettingPageState();
 }
 
-class _SettigPageState extends State<SettigPage> {
+class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -34,7 +34,7 @@ class _SettigPageState extends State<SettigPage> {
               const SizedBox(
                 height: 10,
               ),
-              LoginButtonWidget(),
+              const LoginButtonWidget(),
               const SizedBox(
                 height: 10,
               ),
@@ -62,21 +62,21 @@ class _SettigPageState extends State<SettigPage> {
 }
 
 class LoginButtonWidget extends StatefulWidget {
-  late IRepository repository = getIt<IRepository>();
-
-  LoginButtonWidget({Key? key}) : super(key: key);
+  const LoginButtonWidget({super.key});
 
   @override
   State<LoginButtonWidget> createState() => _LoginButtonWidgetState();
 }
 
 class _LoginButtonWidgetState extends State<LoginButtonWidget> {
+  late IRepository repository = getIt<IRepository>();
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        if (widget.repository.isUserLoggedIn()) {
-          widget.repository.logout();
+        if (repository.isUserLoggedIn()) {
+          repository.logout();
           setState(() {});
         } else {
           AutoRouter.of(context).push(const LoginRoute()).then((value) => {
@@ -84,9 +84,8 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
               });
         }
       },
-      child: Text(widget.repository.isUserLoggedIn()
-          ? context.loc.logout
-          : context.loc.login),
+      child: Text(
+          repository.isUserLoggedIn() ? context.loc.logout : context.loc.login),
     );
   }
 }

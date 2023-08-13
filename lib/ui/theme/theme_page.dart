@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/extension/app_localizations_context.dart';
 
@@ -6,6 +7,7 @@ import '../../app/app_event.dart';
 import '../../di/di.dart';
 import '../../repository/preferences/shared_preferences.dart';
 
+@RoutePage()
 class ThemePage extends StatelessWidget {
   const ThemePage({Key? key}) : super(key: key);
 
@@ -15,7 +17,7 @@ class ThemePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final isDarkMode = prefs.isDarkMode();
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(title: Text(context.loc.theme)),
       body: Center(
         child: Padding(

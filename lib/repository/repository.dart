@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:flutter_base/repository/api/api_service.dart';
 import 'package:flutter_base/repository/preferences/shared_preferences.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,10 +9,9 @@ abstract class IRepository {
 
 @LazySingleton(as: IRepository)
 class Repository implements IRepository {
-  final ApiService _apiService;
   final ISharedPreferencesManager _preferencesManager;
 
-  Repository(this._apiService, this._preferencesManager);
+  Repository(this._preferencesManager);
 
   @override
   Future<void> login(String username, String password) async {

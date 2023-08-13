@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/di/di.dart';
 import 'package:flutter_base/extension/app_localizations_context.dart';
+import 'package:flutter_base/navigation/app_router.gr.dart';
 import 'package:flutter_base/ui/login/bloc/login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -26,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(title: Text(context.loc.login)),
       body: BlocConsumer<LoginBloc, LoginState>(
         bloc: loginBloc,
@@ -35,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             if (kDebugMode) {
               print('success');
             }
-            Navigator.of(context).pop(true);
+            AutoRouter.of(context).replace(const MainRoute());
           } else if (state is LoginFailure) {
             if (kDebugMode) {
               print('submission failure');

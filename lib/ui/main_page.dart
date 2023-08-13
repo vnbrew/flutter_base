@@ -5,6 +5,7 @@ import 'package:rive/rive.dart';
 
 import '../navigation/app_router.gr.dart';
 
+@RoutePage()
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -18,15 +19,12 @@ class _MainPageState extends State<MainPage> {
   Widget build(context) {
     return AutoTabsScaffold(
         scaffoldKey: _scaffoldkey,
-        builder: (context, child, animation) {
-          return ScaleTransition(scale: animation, child: child);
-        },
         routes: const [
-          HomeRouter(),
-          SettingRouter(),
-          LandRouter(),
-          MediationRouter(),
-          ProfileRouter(),
+          HomeEmptyRoute(),
+          SettingEmptyRoute(),
+          LandEmptyRoute(),
+          MediationEmptyRoute(),
+          ProfileEmptyRoute(),
         ],
         bottomNavigationBuilder: (_, tabsRouter) {
           return SafeArea(

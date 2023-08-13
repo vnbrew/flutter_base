@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base/enum/constants.dart';
 import 'package:flutter_base/enum/enum.dart';
@@ -8,6 +9,7 @@ import '../../app/app_event.dart';
 import '../../di/di.dart';
 import '../../repository/preferences/shared_preferences.dart';
 
+@RoutePage()
 class LanguagePage extends StatelessWidget {
   const LanguagePage({Key? key}) : super(key: key);
 
@@ -17,7 +19,7 @@ class LanguagePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final currentLanguageCode = prefs.getLanguageCode();
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(title: Text(context.loc.languege)),
       body: Center(
         child: Padding(
