@@ -14,7 +14,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 @RoutePage()
 class AppView extends StatefulWidget {
-  const AppView({Key? key}) : super(key: key);
+  const AppView({super.key});
 
   @override
   State<AppView> createState() => _AppViewState();
@@ -34,8 +34,7 @@ class _AppViewState extends State<AppView> {
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
       buildWhen: (previous, current) {
-        bool build = previous.isDarkTheme != current.isDarkTheme ||
-            previous.languageCode != current.languageCode;
+        bool build = previous.isDarkTheme != current.isDarkTheme || previous.languageCode != current.languageCode;
         if (kDebugMode) {
           print('App -- BlocBuilder: $build previous$previous current$current');
         }
@@ -48,9 +47,7 @@ class _AppViewState extends State<AppView> {
           routerDelegate: _appRouter.delegate(),
           routeInformationParser: _appRouter.defaultRouteParser(),
           supportedLocales: AppLocalized.delegate.supportedLocales,
-          locale: state.languageCode == LanguageCode.en
-              ? const Locale('en', 'EN')
-              : const Locale('vi', 'VI'),
+          locale: state.languageCode == LanguageCode.en ? const Locale('en', 'EN') : const Locale('vi', 'VI'),
           localizationsDelegates: const [
             AppLocalized.delegate,
             GlobalMaterialLocalizations.delegate,

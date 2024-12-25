@@ -6,7 +6,7 @@
 # Build
 ```sh
 flutter pub global run intl_utils:generate
-flutter pub run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 ```
 # Splash
 ```sh

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_base/navigation/app_router.gr.dart';
 
 @AutoRouterConfig()
-class AppRouter extends $AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   RouteType get defaultRouteType => const RouteType.material();
 
@@ -144,5 +144,10 @@ class AppRouter extends $AppRouter {
             ),
           ],
         ),
+      ];
+
+  @override
+  List<AutoRouteGuard> get guards => [
+        // optionally add root guards here
       ];
 }
