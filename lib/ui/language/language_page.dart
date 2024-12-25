@@ -19,7 +19,6 @@ class LanguagePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final currentLanguageCode = prefs.getLanguageCode();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.languege)),
       body: Center(
         child: Padding(

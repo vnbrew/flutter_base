@@ -17,7 +17,6 @@ class ThemePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final isDarkMode = prefs.isDarkMode();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.theme)),
       body: Center(
         child: Padding(

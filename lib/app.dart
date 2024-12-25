@@ -55,8 +55,8 @@ class _AppViewState extends State<AppView> {
             GlobalWidgetsLocalizations.delegate,
           ],
           themeMode: state.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
-          theme: lightMode,
-          darkTheme: darkMode,
+          theme: lightTheme,
+          darkTheme: darkTheme,
         );
       }),
     );
