@@ -5,12 +5,12 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 
 @RoutePage()
 class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+  const AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.about)),
       body: displayMarkdown(context, "en.md"),
     );

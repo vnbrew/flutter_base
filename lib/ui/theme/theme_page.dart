@@ -9,7 +9,7 @@ import '../../repository/preferences/shared_preferences.dart';
 
 @RoutePage()
 class ThemePage extends StatelessWidget {
-  const ThemePage({Key? key}) : super(key: key);
+  const ThemePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ThemePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final isDarkMode = prefs.isDarkMode();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.theme)),
       body: Center(
         child: Padding(
@@ -37,9 +37,7 @@ class ThemePage extends StatelessWidget {
                   children: [
                     Text(context.loc.light_mode),
                     const SizedBox(width: 5),
-                    (!isDarkMode
-                        ? const Icon(Icons.check, size: 24.0)
-                        : const SizedBox(width: 24))
+                    (!isDarkMode ? const Icon(Icons.check, size: 24.0) : const SizedBox(width: 24))
                   ],
                 ),
               ),
@@ -55,9 +53,7 @@ class ThemePage extends StatelessWidget {
                   children: [
                     Text(context.loc.dark_mode),
                     const SizedBox(width: 5),
-                    (isDarkMode
-                        ? const Icon(Icons.check, size: 24.0)
-                        : const SizedBox(width: 24))
+                    (isDarkMode ? const Icon(Icons.check, size: 24.0) : const SizedBox(width: 24))
                   ],
                 ),
               ),

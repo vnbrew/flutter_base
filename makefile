@@ -6,7 +6,7 @@ all: run
 
 # language
 language:
-	$(FLUTTER) pub global run intl_utils:generate
+	dart run intl_utils:generate
 
 # build_runner
 runner:

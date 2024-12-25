@@ -11,7 +11,7 @@ import '../../repository/preferences/shared_preferences.dart';
 
 @RoutePage()
 class LanguagePage extends StatelessWidget {
-  const LanguagePage({Key? key}) : super(key: key);
+  const LanguagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class LanguagePage extends StatelessWidget {
     final prefs = getIt<ISharedPreferencesManager>();
     final currentLanguageCode = prefs.getLanguageCode();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.languege)),
       body: Center(
         child: Padding(
@@ -29,7 +29,7 @@ class LanguagePage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  if(currentLanguageCode != LanguageCode.en) {
+                  if (currentLanguageCode != LanguageCode.en) {
                     var languageCode = LanguageCode.en;
                     appBloc.add(AppLanguageChanged(languageCode: languageCode));
                     prefs.setLanguageCode(languageCode);
@@ -48,7 +48,7 @@ class LanguagePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  if(currentLanguageCode != LanguageCode.vi) {
+                  if (currentLanguageCode != LanguageCode.vi) {
                     var languageCode = LanguageCode.vi;
                     appBloc.add(AppLanguageChanged(languageCode: languageCode));
                     prefs.setLanguageCode(languageCode);

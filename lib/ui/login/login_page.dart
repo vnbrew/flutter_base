@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.login)),
       body: BlocConsumer<LoginBloc, LoginState>(
         bloc: loginBloc,
@@ -66,8 +66,7 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         SingleChildScrollView(
           child: Container(
-            padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
+            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
             margin: const EdgeInsets.only(left: 35, right: 35),
             child: Column(
               children: [
@@ -167,9 +166,7 @@ class _LoginPageState extends State<LoginPage> {
         Positioned(
           child: Align(
             alignment: Alignment.center,
-            child: state is LoginLoading
-                ? const CircularProgressIndicator()
-                : null,
+            child: state is LoginLoading ? const CircularProgressIndicator() : null,
           ),
         )
       ],

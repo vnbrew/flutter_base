@@ -8,7 +8,7 @@ import '../../navigation/app_router.gr.dart';
 
 @RoutePage()
 class SettingPage extends StatefulWidget {
-  const SettingPage({Key? key}) : super(key: key);
+  const SettingPage({super.key});
 
   @override
   State<SettingPage> createState() => _SettingPageState();
@@ -18,7 +18,7 @@ class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -84,8 +84,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
               });
         }
       },
-      child: Text(
-          repository.isUserLoggedIn() ? context.loc.logout : context.loc.login),
+      child: Text(repository.isUserLoggedIn() ? context.loc.logout : context.loc.login),
     );
   }
 }

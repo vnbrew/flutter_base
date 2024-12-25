@@ -5,12 +5,12 @@ import 'package:flutter_base/navigation/app_router.gr.dart';
 
 @RoutePage()
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  const DetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.detail)),
       body: Center(
         child: Padding(

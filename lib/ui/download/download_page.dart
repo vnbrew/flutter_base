@@ -4,12 +4,12 @@ import 'package:flutter_base/extension/app_localizations_context.dart';
 
 @RoutePage()
 class DownloadPage extends StatelessWidget {
-  const DownloadPage({Key? key}) : super(key: key);
+  const DownloadPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text(context.loc.download)),
       body: Center(
         child: Padding(

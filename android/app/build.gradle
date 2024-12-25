@@ -1,14 +1,15 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
         localProperties.load(reader)
     }
-}
-
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new RuntimeException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
@@ -21,38 +22,68 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('./app/src/production/prod.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
-    ndkVersion "25.1.8937393"
+    compileSdk 34
+    ndkVersion flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = true
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
         applicationId "com.example.flutter_base"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion 22
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            debugSymbolLevel 'FULL'
+        }
     }
 
     buildTypes {
         release {
             signingConfig signingConfigs.debug
+        }
+    }
+    
+    namespace "com.example.flutter_base"
+
+    lint {
+        abortOnError false
+        disable 'InvalidPackage'
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def project = "flutter_app"
+            def SEP = "_"
+            def buildType = variant.buildType.name
+            def version = variant.versionName
+            def versionCode = variant.versionCode
+            def date = new Date();
+            def formattedDate = date.format('ddMMyy_HH')
+
+            def newApkName = project + SEP + buildType + SEP + version + SEP + versionCode + SEP + formattedDate + ".apk"
+
+            outputFileName = new File(newApkName)
         }
     }
 }
@@ -62,5 +93,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20"
 }

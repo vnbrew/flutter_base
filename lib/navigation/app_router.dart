@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_base/navigation/app_router.gr.dart';
+import 'package:flutter/foundation.dart' show TargetPlatform, defaultTargetPlatform;
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
   @override
-  RouteType get defaultRouteType => const RouteType.material();
+  RouteType get defaultRouteType =>
+      defaultTargetPlatform == TargetPlatform.iOS ? const RouteType.cupertino() : RouteType.material();
 
   @override
   List<AutoRoute> get routes => [
